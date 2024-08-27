@@ -1,18 +1,18 @@
 (function ($) {
-	'use strict';
+	"use strict";
 
 	$(window).scroll(function () {
-		if ($('.navigation').offset().top > 100) {
-			$('.navigation').addClass('fixed-nav');
+		if ($(".navigation").offset().top > 100) {
+			$(".navigation").addClass("fixed-nav");
 		} else {
-			$('.navigation').removeClass('fixed-nav');
+			$(".navigation").removeClass("fixed-nav");
 		}
 	});
 
 
-	$('.portfolio-gallery').each(function () {
-		$(this).find('.popup-gallery').magnificPopup({
-			type: 'image',
+	$(".portfolio-gallery").each(function () {
+		$(this).find(".popup-gallery").magnificPopup({
+			type: "image",
 			gallery: {
 				enabled: true
 			}
@@ -20,7 +20,7 @@
 	});
 
 
-	$('#contact-form').validate({
+	$("#contact-form").validate({
 		rules: {
 			user_name: {
 				required: true,
@@ -39,29 +39,28 @@
 		},
 		messages: {
 			user_name: {
-				required: 'Come on, you have a name don\'t you?',
-				minlength: 'Your name must consist of at least 2 characters'
+				required: "Come on, you have a name don't you?",
+				minlength: "Your name must consist of at least 2 characters"
 			},
 			user_email: {
-				required: 'Please put your email address'
+				required: "Please put your email address"
 			},
 			user_message: {
-				required: 'Put some messages here?',
-				minlength: 'Your name must consist of at least 2 characters'
+				required: "Put some messages here?",
+				minlength: "Your name must consist of at least 2 characters"
 			}
 
 		},
 		submitHandler: function (form) {
 			$(form).ajaxSubmit({
-				type: 'POST',
+				type: "POST",
 				data: $(form).serialize(),
-				url: 'sendmail.php',
+				url: "sendmail.php",
 				success: function () {
-					$('#contact-form #success').fadeIn();
+					$("#contact-form #success").fadeIn();
 				},
 				error: function () {
-
-					$('#contact-form #error').fadeIn();
+					$("#contact-form #error").fadeIn();
 				}
 			});
 		}
@@ -69,7 +68,7 @@
 
 
 
-	$('.testimonial-slider').slick({
+	$(".testimonial-slider").slick({
 		slidesToShow: 1,
 		infinite: true,
 		arrows: false,
@@ -82,24 +81,24 @@
 
 
 	// Init Magnific Popup
-	$('.portfolio-popup').magnificPopup({
-		delegate: 'a',
-		type: 'image',
+	$(".portfolio-popup").magnificPopup({
+		delegate: "a",
+		type: "image",
 		gallery: {
 			enabled: true
 		},
-		mainClass: 'mfp-with-zoom',
+		mainClass: "mfp-with-zoom",
 		navigateByImgClick: true,
-		arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
-		tPrev: 'Previous (Left arrow key)',
-		tNext: 'Next (Right arrow key)',
-		tCounter: '<span class="mfp-counter">%curr% of %total%</span>',
+		arrowMarkup: "<button title=\"%title%\" type=\"button\" class=\"mfp-arrow mfp-arrow-%dir%\"></button>",
+		tPrev: "Previous (Left arrow key)",
+		tNext: "Next (Right arrow key)",
+		tCounter: "<span class=\"mfp-counter\">%curr% of %total%</span>",
 		zoom: {
 			enabled: true,
 			duration: 300,
-			easing: 'ease-in-out',
+			easing: "ease-in-out",
 			opener: function (openerElement) {
-				return openerElement.is('img') ? openerElement : openerElement.find('img');
+				return openerElement.is("img") ? openerElement : openerElement.find("img");
 			}
 		}
 	});
